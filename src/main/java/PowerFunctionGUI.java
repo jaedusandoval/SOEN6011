@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 public class PowerFunctionGUI {
 
     private final PowerFunction powerFunction = new PowerFunction();
+    JPanel panel;
 
     public void createAndShowGUI() {
         // Create the frame
@@ -14,7 +15,7 @@ public class PowerFunctionGUI {
         frame.setSize(400, 200);
 
         // Create the panel and layout
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new GridLayout(5, 2, 10, 10)); // Added padding
 
         // Create the components
