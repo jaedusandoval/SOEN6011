@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class PowerFunctionGUI {
 
-    private PowerFunction powerFunction = new PowerFunction();
+    private final PowerFunction powerFunction = new PowerFunction();
 
     public void createAndShowGUI() {
         // Create the frame
@@ -15,17 +15,37 @@ public class PowerFunctionGUI {
 
         // Create the panel and layout
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(5, 2, 10, 10)); // Added padding
 
         // Create the components
         JLabel xLabel = new JLabel("Base (x):");
+        xLabel.getAccessibleContext().setAccessibleName("Base label");
+        xLabel.getAccessibleContext().setAccessibleDescription("Label for base value input field");
+
         JTextField xField = new JTextField();
+        xField.getAccessibleContext().setAccessibleName("Base input field");
+        xField.getAccessibleContext().setAccessibleDescription("Enter the base value here");
+
         JLabel yLabel = new JLabel("Exponent (y):");
+        yLabel.getAccessibleContext().setAccessibleName("Exponent label");
+        yLabel.getAccessibleContext().setAccessibleDescription("Label for exponent value input field");
+
         JTextField yField = new JTextField();
+        yField.getAccessibleContext().setAccessibleName("Exponent input field");
+        yField.getAccessibleContext().setAccessibleDescription("Enter the exponent value here");
+
         JButton calculateButton = new JButton("Calculate");
+        calculateButton.getAccessibleContext().setAccessibleName("Calculate button");
+        calculateButton.getAccessibleContext().setAccessibleDescription("Button to calculate the power function");
+
         JLabel resultLabel = new JLabel("Result:");
+        resultLabel.getAccessibleContext().setAccessibleName("Result label");
+        resultLabel.getAccessibleContext().setAccessibleDescription("Label for the result output field");
+
         JTextField resultField = new JTextField();
         resultField.setEditable(false);
+        resultField.getAccessibleContext().setAccessibleName("Result output field");
+        resultField.getAccessibleContext().setAccessibleDescription("Displays the result of the power calculation");
 
         // Add components to the panel
         panel.add(xLabel);
@@ -33,12 +53,9 @@ public class PowerFunctionGUI {
         panel.add(yLabel);
         panel.add(yField);
         panel.add(calculateButton);
-        panel.add(new JLabel()); // Empty cell
+        panel.add(new JLabel()); // Empty cell for spacing
         panel.add(resultLabel);
         panel.add(resultField);
-
-        // Add panel to the frame
-        frame.getContentPane().add(panel);
 
         // Add action listener to the button
         calculateButton.addActionListener(new ActionListener() {
@@ -57,8 +74,11 @@ public class PowerFunctionGUI {
             }
         });
 
+        // Add panel to the frame
+        frame.getContentPane().add(panel);
+        // Center the frame on the screen
+        frame.setLocationRelativeTo(null);
         // Display the frame
         frame.setVisible(true);
     }
-
 }
