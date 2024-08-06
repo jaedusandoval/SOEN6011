@@ -1,7 +1,8 @@
+package com.powerfunction;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.WindowConstants;
 
 public class PowerFunctionGUI {
 
@@ -11,7 +12,7 @@ public class PowerFunctionGUI {
     public void createAndShowGUI() {
         // Create the frame
         JFrame frame = new JFrame("Power Function Calculator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400, 200);
 
         // Create the panel and layout
@@ -58,20 +59,17 @@ public class PowerFunctionGUI {
         panel.add(resultLabel);
         panel.add(resultField);
 
-        // Add action listener to the button
-        calculateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    double x = Double.parseDouble(xField.getText());
-                    double y = Double.parseDouble(yField.getText());
-                    double result = powerFunction.computePower(x, y);
-                    resultField.setText(String.valueOf(result));
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(frame, "Please enter valid numbers for x and y.", "Input Error", JOptionPane.ERROR_MESSAGE);
-                } catch (IllegalArgumentException ex) {
-                    JOptionPane.showMessageDialog(frame, ex.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
-                }
+        // Add action listener to the button using a lambda expression
+        calculateButton.addActionListener(e -> {
+            try {
+                double x = Double.parseDouble(xField.getText());
+                double y = Double.parseDouble(yField.getText());
+                double result = powerFunction.computePower(x, y);
+                resultField.setText(String.valueOf(result));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(frame, "Please enter valid numbers for x and y.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            } catch (IllegalArgumentException ex) {
+                JOptionPane.showMessageDialog(frame, ex.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 

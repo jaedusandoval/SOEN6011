@@ -7,9 +7,9 @@ This project is a Java application that calculates the power of a base number ra
 - [Installation](#installation)
 - [Usage](#usage)
 - [Code Overview](#code-overview)
-    - [Main Class](#main-class)
-    - [PowerFunctionGUI Class](#powerfunctiongui-class)
-    - [PowerFunction Class](#powerfunction-class)
+    - [com.powerfunction.Main Class](#main-class)
+    - [com.powerfunction.PowerFunctionGUI Class](#powerfunctiongui-class)
+    - [com.powerfunction.PowerFunction Class](#powerfunction-class)
 - [License](#license)
 
 ## Installation
@@ -34,8 +34,8 @@ This project is a Java application that calculates the power of a base number ra
 
 1. **Run the application**:
 
-* In IntelliJ IDEA, navigate to the Main class.
-* Right-click on the Main class and select Run 'Main.main()'.
+* In IntelliJ IDEA, navigate to the com.powerfunction.Main class.
+* Right-click on the com.powerfunction.Main class and select Run 'com.powerfunction.Main.main()'.
 
 2. **Use the GUI**:
 
@@ -46,13 +46,13 @@ This project is a Java application that calculates the power of a base number ra
 
 ## Code Overview
 
-**Main Class**
+**com.powerfunction.Main Class**
 * This is the entry point of the application. It sets up the GUI on the Event Dispatch Thread (EDT).
 
-**PowerFunctionGUI Class**
+**com.powerfunction.PowerFunctionGUI Class**
 * This class creates and manages the graphical user interface. It includes input fields for the base and exponent, a button to perform the calculation, and a field to display the result.
 
-**PowerFunction Class**
+**com.powerfunction.PowerFunction Class**
 * This class contains the logic for calculating the power function. It handles both integer and fractional exponents.
 
 ## License

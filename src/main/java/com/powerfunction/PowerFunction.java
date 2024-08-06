@@ -1,3 +1,5 @@
+package com.powerfunction;
+
 public class PowerFunction {
 
     public double computePower(double x, double y) {
